@@ -2,7 +2,7 @@
     <div class="float-right"> {{ createdAt | date: 'short' }} </div>
     <h3> {{ title }} </h3>
     <div class="row">
-        <div class="col-2 btn-group btn-group-vertical">
+        <div class="col-2 col-sm-2 col-md-1 col-lg-1 col-xl-1 col-xxl-1 btn-group btn-group-vertical">
             <button (click)="onLoveIt()" class="btn btn-success">
                 <span class="" *ngIf="positiveLoves()">({{ loveIts }})</span>
                 <span *ngIf="!positiveLoves()">+</span>
@@ -12,7 +12,7 @@
                 <span *ngIf="!negativeLoves()">-</span>
             </button>
         </div>
-        <div class="col-10">
+        <div class="col-10 col-sm-10 col-md-11 col-lg-11 col-xl-11 col-xxl-11">
             <p> {{ content }} </p>
         </div>
     </div>

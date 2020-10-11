@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostsService } from './posts.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FooterComponent } from './layouts/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     PostListItemComponent,
     PostsComponent,
     HeaderComponent,
-    PostNewComponent
+    PostNewComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
