@@ -1,13 +1,22 @@
 <li [ngClass]="{'list-group-item-success': liked(), 'list-group-item-danger': disliked()}" class="list-group-item list-group-item-action">
-    <div class="float-right"> {{ created_at | date: 'short' }} </div>
+    <div class="float-right"> {{ createdAt | date: 'short' }} </div>
     <h3> {{ title }} </h3>
-    <p> {{ content }} </p>
-    <div class="">
-        <button (click)="onLoveIt()" class="btn btn-success">
-            ({{ loveIts }}) Love it
-        </button>
-        <button (click)="onDislikeIt()" class="btn btn-danger ml-3">
-            Don't Love it
-        </button>
+    <div class="row">
+        <div class="col-2 btn-group btn-group-vertical">
+            <button (click)="onLoveIt()" class="btn btn-success">
+                <span class="" *ngIf="positiveLoves()">({{ loveIts }})</span>
+                <span *ngIf="!positiveLoves()">+</span>
+            </button>
+            <button (click)="onDislikeIt()" class="btn btn-danger mt-3">
+                <span class="" *ngIf="negativeLoves()">({{ loveIts }})</span>
+                <span *ngIf="!negativeLoves()">-</span>
+            </button>
+        </div>
+        <div class="col-10">
+            <p> {{ content }} </p>
+        </div>
     </div>
+    <button (click)="onRemove()" class="ml-auto d-block btn btn-link" [disabled]="isDeleting" title="Remove post">
+        x
+    </button>
 </li>
